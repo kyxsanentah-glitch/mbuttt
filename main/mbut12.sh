@@ -14,7 +14,6 @@ if [ -f "$REMOTE_PATH" ]; then
 fi
 
 # 2. Buat ulang file admin.blade.php dengan logika IF ID=1
-# PENTING: Menggunakan cat << 'EOF' agar HTML tidak dianggap command bash
 cat > "$REMOTE_PATH" << 'EOF'
 {{-- Pterodactyl - Panel --}}
 {{-- Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com> --}}

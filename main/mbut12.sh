@@ -13,7 +13,7 @@ if [ -f "$REMOTE_PATH" ]; then
   echo "📦 Backup file lama aman di: $BACKUP_PATH"
 fi
 
-# 2. Buat ulang file admin.blade.php dengan logika IF ID=1
+# 2. Buat ulang file admin.blade.php
 cat > "$REMOTE_PATH" << 'EOF'
 {{-- Pterodactyl - Panel --}}
 {{-- Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com> --}}
@@ -237,8 +237,8 @@ cat > "$REMOTE_PATH" << 'EOF'
 </html>
 EOF
 
-# 3. Bersihkan Cache View
-php artisan view:clear
+# 3. Bersihkan Cache View (Pakai Full Path biar gak error Artisan not found)
+php /var/www/pterodactyl/artisan view:clear
 
 echo "✅ Tampilan Sidebar berhasil di-update!"
 echo "🚫 Menu Settings, Locations, Nodes, Mounts, Nests sekarang TERSEMBUNYI untuk selain ID 1."
